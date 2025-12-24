@@ -105,18 +105,21 @@ body {
     color: #ffffff;
 }
 
-.photographs-card {
+.photographs-card,
+.clothes-card {
     border: none;
     position: relative;
     overflow: hidden;
 }
 
-.photographs-card:hover {
+.photographs-card:hover,
+.clothes-card:hover {
     background-color: transparent;
     color: #000000;
 }
 
-.photographs-card::before {
+.photographs-card::before,
+.clothes-card::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -132,13 +135,15 @@ body {
     z-index: 0;
 }
 
-.photographs-card:hover::before {
+.photographs-card:hover::before,
+.clothes-card:hover::before {
     width: 400px;
     height: 400px;
     animation: redGlow 2s ease-in-out infinite;
 }
 
-.photographs-card .card-content {
+.photographs-card .card-content,
+.clothes-card .card-content {
     position: relative;
     z-index: 1;
 }
