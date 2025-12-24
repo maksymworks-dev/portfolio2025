@@ -27,13 +27,21 @@
         <div class="container">
             <div class="project-grid">
                 <div class="project-item">
-                    <div class="project-image">
+                    <div class="project-image" onclick="openModal('projects/IMG_5956.JPG')">
                         <img src="projects/IMG_5956.JPG" alt="Photograph 1">
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Modal for expanded image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
 
     <footer class="footer">
         <div class="footer-content">
