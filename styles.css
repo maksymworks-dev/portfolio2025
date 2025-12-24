@@ -15,126 +15,41 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+/* Header */
+.header {
+    padding: 60px 24px;
+    text-align: center;
     border-bottom: 1px solid #f0f0f0;
 }
 
-.nav-container {
+.header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-.nav-logo {
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    color: #000000;
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.nav-logo:hover {
-    opacity: 0.7;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-link {
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    color: #666666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: #000000;
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 24px 24px;
-}
-
-.hero-content {
-    max-width: 800px;
-    text-align: center;
-}
-
-.hero-title {
-    font-size: clamp(40px, 8vw, 72px);
-    font-weight: 300;
-    letter-spacing: -1px;
-    margin-bottom: 24px;
-    color: #000000;
-}
-
-.hero-subtitle {
-    font-size: clamp(18px, 2vw, 20px);
-    font-weight: 300;
-    color: #666666;
-    margin-bottom: 48px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    gap: 24px;
 }
 
-@media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
 }
 
-.btn {
-    padding: 12px 32px;
-    border: 1px solid #000000;
-    color: #000000;
-    text-decoration: none;
+.name {
+    font-size: clamp(28px, 5vw, 36px);
     font-weight: 300;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-    display: inline-block;
+    letter-spacing: -0.5px;
+    color: #000000;
 }
 
-.btn:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-/* Sections */
-.section {
-    padding: 96px 24px;
+/* Main Content */
+.main {
+    padding: 60px 24px;
 }
 
 .container {
@@ -142,35 +57,26 @@ body {
     margin: 0 auto;
 }
 
-.section-title {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 300;
-    letter-spacing: -0.5px;
-    text-align: center;
-    margin-bottom: 64px;
-    color: #000000;
-}
-
-/* Gallery */
-.gallery {
+/* Project Grid */
+.project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
 }
 
 @media (min-width: 640px) {
-    .gallery {
+    .project-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
-    .gallery {
+    .project-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.gallery-item {
+.project-item {
     position: relative;
     overflow: hidden;
     background-color: #fafafa;
@@ -178,18 +84,14 @@ body {
     aspect-ratio: 4 / 5;
 }
 
-.gallery-item.square {
-    aspect-ratio: 1 / 1;
-}
-
-.gallery-item img {
+.project-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
 }
 
-.gallery-item:hover img {
+.project-item:hover img {
     transform: scale(1.05);
 }
 
@@ -207,18 +109,11 @@ body {
 }
 
 .placeholder-icon {
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
     background-color: #e0e0e0;
     border-radius: 4px;
     margin-bottom: 16px;
-}
-
-.placeholder-title {
-    font-size: 14px;
-    color: #666666;
-    font-weight: 300;
-    margin-bottom: 8px;
 }
 
 .placeholder-text {
@@ -226,9 +121,3 @@ body {
     color: #999999;
     font-weight: 300;
 }
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
