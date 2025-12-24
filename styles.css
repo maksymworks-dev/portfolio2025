@@ -89,14 +89,14 @@ body {
 @media (min-width: 768px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px 40px;
+        gap: 30px 10px;
     }
 }
 
 @media (min-width: 1024px) {
     .project-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 30px 40px;
+        gap: 30px 10px;
     }
 }
 
