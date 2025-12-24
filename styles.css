@@ -67,17 +67,36 @@ body {
     margin: 0 auto;
 }
 
+.project-item {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .project-item {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
 /* Project Grid */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 30px;
 }
 
 @media (min-width: 768px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 60px 80px;
+        gap: 30px 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 40px;
     }
 }
 
@@ -174,4 +193,5 @@ body {
     color: #666666;
     letter-spacing: 0.3px;
 }
+
 
