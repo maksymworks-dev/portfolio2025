@@ -111,6 +111,11 @@ body {
     overflow: hidden;
 }
 
+.photographs-card:hover {
+    background-color: transparent;
+    color: #000000;
+}
+
 .photographs-card::before {
     content: '';
     position: absolute;
