@@ -93,13 +93,6 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
-    .project-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px 10px;
-    }
-}
-
 .project-item {
     display: flex;
     flex-direction: column;
@@ -193,5 +186,6 @@ body {
     color: #666666;
     letter-spacing: 0.3px;
 }
+
 
 
