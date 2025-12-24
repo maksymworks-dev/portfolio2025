@@ -75,7 +75,7 @@ body {
 @media (min-width: 768px) {
     .project-item {
         max-width: 25%;
-        margin: 0;
+        margin: 0 auto;
     }
 }
 
@@ -84,12 +84,14 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    justify-items: center;
 }
 
 @media (min-width: 768px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px 3px;
+        justify-items: center;
     }
 }
 
