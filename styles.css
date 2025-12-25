@@ -149,8 +149,8 @@ body {
 .photographs-card:hover::before,
 .clothes-card:hover::before,
 .objects-card:hover::before {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     animation: redGlow 2s ease-in-out infinite;
 }
 
