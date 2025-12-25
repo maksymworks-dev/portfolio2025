@@ -79,6 +79,7 @@ body {
     gap: 20px;
     margin-top: 60px;
     justify-items: center;
+    overflow: visible;
 }
 
 @media (min-width: 768px) {
@@ -106,6 +107,7 @@ body {
     flex: 1;
     max-width: 300px;
     overflow: visible;
+    -webkit-overflow-scrolling: touch;
 }
 
 .landing-card:hover {
@@ -119,6 +121,9 @@ body {
     border: none;
     position: relative;
     overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    clip-path: none;
+    -webkit-clip-path: none;
 }
 
 .photographs-card:hover,
