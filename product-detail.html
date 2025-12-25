@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - BLESSIFICATOR</title>
+    <meta name="description" content="Product detail">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="name">BLESSIFICATOR</a>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-link">Info</a>
+                <a href="https://www.instagram.com/blessificator/" class="header-link" target="_blank" rel="noopener noreferrer">IG</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container product-detail-container">
+            <div class="product-detail-grid">
+                <div class="product-detail-image">
+                    <img src="" alt="Product" id="productImage">
+                </div>
+                <div class="product-detail-info">
+                    <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
+                    <div class="product-detail-price" id="productPrice">€ 000</div>
+                    <div class="product-detail-materials" id="productMaterials">
+                        <p>MATERIAL DETAILS</p>
+                    </div>
+                    <div class="product-detail-specs" id="productSpecs">
+                        <ul>
+                            <li>Specification 1</li>
+                            <li>Specification 2</li>
+                            <li>Specification 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>©2025, BLESSIFICATOR</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get product data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productData = {
+            name: urlParams.get('name') || 'PRODUCT NAME',
+            image: urlParams.get('image') || '',
+            price: urlParams.get('price') || '€ 000',
+            materials: urlParams.get('materials') || 'MATERIAL DETAILS',
+            specs: urlParams.get('specs') ? urlParams.get('specs').split('|') : []
+        };
+
+        // Update page content
+        document.getElementById('productName').textContent = productData.name;
+        document.getElementById('productImage').src = productData.image;
+        document.getElementById('productImage').alt = productData.name;
+        document.getElementById('productPrice').textContent = productData.price;
+        document.getElementById('productMaterials').innerHTML = '<p>' + productData.materials + '</p>';
+        
+        if (productData.specs.length > 0) {
+            const specsList = productData.specs.map(spec => '<li>' + spec + '</li>').join('');
+            document.getElementById('productSpecs').innerHTML = '<ul>' + specsList + '</ul>';
+        }
+    </script>
+</body>
+</html>
+
