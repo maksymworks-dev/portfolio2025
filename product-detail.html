@@ -27,8 +27,15 @@
         <div class="container product-detail-container">
             <div class="product-detail-grid">
                 <div class="product-detail-image">
-                    <img src="" alt="Product" id="productImage" class="main-image">
-                    <div id="additionalImages" class="additional-images"></div>
+                    <div id="imageCarousel" class="image-carousel">
+                        <img src="" alt="Product" id="productImage" class="carousel-image active">
+                        <div id="additionalImages" class="additional-images"></div>
+                    </div>
+                    <div class="carousel-controls" id="carouselControls" style="display: none;">
+                        <button class="carousel-btn prev" onclick="changeCarouselImage(-1)">‹</button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn next" onclick="changeCarouselImage(1)">›</button>
+                    </div>
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
@@ -78,19 +85,73 @@
             document.getElementById('productSpecs').innerHTML = '<ul>' + specsList + '</ul>';
         }
 
-        // Add additional images for POLSKA product
+        // Add carousel for POLSKA product
         if (productData.name === 'POLSKA, BLACK') {
-            const additionalImagesDiv = document.getElementById('additionalImages');
-            // Use additionalImages from URL if provided, otherwise use default
-            const images = productData.additionalImages.length > 0 
-                ? productData.additionalImages 
-                : ['projects/front copy.png', 'projects/back copy.png'];
-            images.forEach(function(imgSrc) {
+            const carouselContainer = document.getElementById('imageCarousel');
+            const mainImage = document.getElementById('productImage');
+            const controls = document.getElementById('carouselControls');
+            const dotsContainer = document.getElementById('carouselDots');
+            
+            // Use only IMG_2258 and IMG_1520
+            const images = ['projects/IMG_1520.JPG', 'projects/IMG_2258.jpeg'];
+            
+            // Clear and set up carousel
+            carouselContainer.innerHTML = '';
+            images.forEach(function(imgSrc, index) {
                 const img = document.createElement('img');
                 img.src = imgSrc;
                 img.alt = productData.name;
-                img.className = 'additional-image';
-                additionalImagesDiv.appendChild(img);
+                img.className = 'carousel-image' + (index === 0 ? ' active' : '');
+                carouselContainer.appendChild(img);
+            });
+            
+            // Create dots
+            images.forEach(function(imgSrc, index) {
+                const dot = document.createElement('span');
+                dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+                dot.onclick = function() { goToCarouselImage(index); };
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Show controls
+            controls.style.display = 'flex';
+            
+            // Initialize carousel state
+            window.currentCarouselIndex = 0;
+            window.carouselImages = images;
+        }
+        
+        // Carousel functions
+        function changeCarouselImage(direction) {
+            if (window.carouselImages && window.carouselImages.length > 0) {
+                window.currentCarouselIndex = (window.currentCarouselIndex + direction + window.carouselImages.length) % window.carouselImages.length;
+                updateCarousel();
+            }
+        }
+        
+        function goToCarouselImage(index) {
+            window.currentCarouselIndex = index;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const images = document.querySelectorAll('.carousel-image');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            images.forEach(function(img, index) {
+                if (index === window.currentCarouselIndex) {
+                    img.classList.add('active');
+                } else {
+                    img.classList.remove('active');
+                }
+            });
+            
+            dots.forEach(function(dot, index) {
+                if (index === window.currentCarouselIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
             });
         }
     </script>

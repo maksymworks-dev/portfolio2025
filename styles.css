@@ -522,6 +522,70 @@ body {
     display: block;
 }
 
+/* Image Carousel */
+.image-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.carousel-btn {
+    background: none;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    padding: 0;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-dot.active {
+    background: #000;
+}
+
 .product-detail-info {
     display: flex;
     flex-direction: column;
