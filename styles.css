@@ -124,7 +124,7 @@ body {
 
 .drawing-image {
     width: 100%;
-    cursor: pointer;
+    cursor: default;
     position: relative;
 }
 
