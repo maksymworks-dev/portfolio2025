@@ -18,7 +18,7 @@ body {
 /* Header */
 .header {
     padding: 40px 24px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: none;
 }
 
 .header-content {
@@ -355,7 +355,7 @@ body {
 /* Footer */
 .footer {
     padding: 40px 24px;
-    border-top: 1px solid #f0f0f0;
+    border-top: none;
     margin-top: 80px;
 }
 
