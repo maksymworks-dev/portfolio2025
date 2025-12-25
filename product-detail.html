@@ -81,10 +81,10 @@
         // Add additional images for POLSKA product
         if (productData.name === 'POLSKA, BLACK') {
             const additionalImagesDiv = document.getElementById('additionalImages');
-            const images = [
-                'projects/IMG_1520.JPG',
-                'projects/IMG_2258.jpeg'
-            ];
+            // Use additionalImages from URL if provided, otherwise use default
+            const images = productData.additionalImages.length > 0 
+                ? productData.additionalImages 
+                : ['projects/IMG_1520.JPG', 'projects/IMG_2258.jpeg'];
             images.forEach(function(imgSrc) {
                 const img = document.createElement('img');
                 img.src = imgSrc;
