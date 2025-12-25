@@ -122,6 +122,12 @@ body {
         justify-items: center;
     }
     
+    .drawings-card {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 300px;
+    }
+    
     .objects-card {
         grid-column: 1 / -1;
         justify-self: center;
@@ -150,7 +156,8 @@ body {
 
 .photographs-card,
 .clothes-card,
-.objects-card {
+.objects-card,
+.drawings-card {
     border: none;
     position: relative;
     overflow: visible;
@@ -161,7 +168,8 @@ body {
 
 .photographs-card:hover,
 .clothes-card:hover,
-.objects-card:hover {
+.objects-card:hover,
+.drawings-card:hover {
     background-color: transparent;
     color: #000000;
 }
@@ -186,7 +194,8 @@ body {
 
 .photographs-card:hover .red-blur-effect,
 .clothes-card:hover .red-blur-effect,
-.objects-card:hover .red-blur-effect {
+.objects-card:hover .red-blur-effect,
+.drawings-card:hover .red-blur-effect {
     transform: translate(-50%, -50%) scale(1);
     animation: redGlow 2s ease-in-out infinite;
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -194,7 +203,8 @@ body {
 
 .photographs-card .card-content,
 .clothes-card .card-content,
-.objects-card .card-content {
+.objects-card .card-content,
+.drawings-card .card-content {
     position: relative;
     z-index: 1;
 }
