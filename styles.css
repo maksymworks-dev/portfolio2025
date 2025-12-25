@@ -99,6 +99,41 @@ body {
     margin: 0;
 }
 
+/* Drawings Page - Full Width Images */
+.drawings-main {
+    padding: 20px 0;
+}
+
+.drawings-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.drawings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.drawing-item {
+    width: 100%;
+    margin: 0;
+}
+
+.drawing-image {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.drawing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .container {
     max-width: 400px;
     margin: 0 auto;
