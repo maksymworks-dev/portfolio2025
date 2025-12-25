@@ -68,6 +68,41 @@ body {
     overflow: visible;
 }
 
+.info-main {
+    padding: 60px 24px;
+}
+
+.info-container {
+    max-width: 800px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-brand {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+.info-text {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #000000;
+    line-height: 1.8;
+}
+
+.info-text p {
+    margin: 0;
+}
+
 .container {
     max-width: 400px;
     margin: 0 auto;
