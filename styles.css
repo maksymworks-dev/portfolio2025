@@ -74,17 +74,24 @@ body {
 
 /* Landing Page Cards */
 .landing-cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-top: 60px;
+    justify-items: center;
 }
 
 @media (min-width: 768px) {
     .landing-cards {
-        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        justify-content: center;
+        justify-items: center;
+    }
+    
+    .objects-card {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 300px;
     }
 }
 
