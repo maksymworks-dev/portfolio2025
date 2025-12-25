@@ -28,13 +28,12 @@
             <div class="product-detail-grid">
                 <div class="product-detail-image">
                     <div id="imageCarousel" class="image-carousel">
-                        <img src="" alt="Product" id="productImage" class="carousel-image active">
-                        <div id="additionalImages" class="additional-images"></div>
-                    </div>
-                    <div class="carousel-controls" id="carouselControls" style="display: none;">
-                        <button class="carousel-btn prev" onclick="changeCarouselImage(-1)">‹</button>
-                        <div class="carousel-dots" id="carouselDots"></div>
-                        <button class="carousel-btn next" onclick="changeCarouselImage(1)">›</button>
+                        <button class="carousel-arrow carousel-arrow-prev" onclick="changeCarouselImage(-1)" id="carouselPrev" style="display: none;">‹</button>
+                        <div class="carousel-images-wrapper">
+                            <img src="" alt="Product" id="productImage" class="carousel-image active">
+                            <div id="additionalImages" class="additional-images"></div>
+                        </div>
+                        <button class="carousel-arrow carousel-arrow-next" onclick="changeCarouselImage(1)" id="carouselNext" style="display: none;">›</button>
                     </div>
                 </div>
                 <div class="product-detail-info">
@@ -85,16 +84,25 @@
             document.getElementById('productSpecs').innerHTML = '<ul>' + specsList + '</ul>';
         }
 
-        // Add carousel for POLSKA product
+        // Set up carousel for all products with multiple images
+        const carouselContainer = document.querySelector('.carousel-images-wrapper');
+        const mainImage = document.getElementById('productImage');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        
+        // Build images array
+        let images = [productData.image];
+        
+        // For POLSKA, use specific images
         if (productData.name === 'POLSKA, BLACK') {
-            const carouselContainer = document.getElementById('imageCarousel');
-            const mainImage = document.getElementById('productImage');
-            const controls = document.getElementById('carouselControls');
-            const dotsContainer = document.getElementById('carouselDots');
-            
-            // Use only IMG_2258 and IMG_1520
-            const images = ['projects/IMG_1520.JPG', 'projects/IMG_2258.jpeg'];
-            
+            images = ['projects/IMG_1520.JPG', 'projects/IMG_2258.jpeg'];
+        } else if (productData.additionalImages.length > 0) {
+            // For other products, use additionalImages if provided
+            images = [productData.image, ...productData.additionalImages];
+        }
+        
+        // Only set up carousel if there are multiple images
+        if (images.length > 1) {
             // Clear and set up carousel
             carouselContainer.innerHTML = '';
             images.forEach(function(imgSrc, index) {
@@ -105,16 +113,9 @@
                 carouselContainer.appendChild(img);
             });
             
-            // Create dots
-            images.forEach(function(imgSrc, index) {
-                const dot = document.createElement('span');
-                dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
-                dot.onclick = function() { goToCarouselImage(index); };
-                dotsContainer.appendChild(dot);
-            });
-            
-            // Show controls
-            controls.style.display = 'flex';
+            // Show navigation arrows
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
             
             // Initialize carousel state
             window.currentCarouselIndex = 0;
