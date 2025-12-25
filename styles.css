@@ -106,20 +106,23 @@ body {
 }
 
 .photographs-card,
-.clothes-card {
+.clothes-card,
+.objects-card {
     border: none;
     position: relative;
     overflow: hidden;
 }
 
 .photographs-card:hover,
-.clothes-card:hover {
+.clothes-card:hover,
+.objects-card:hover {
     background-color: transparent;
     color: #000000;
 }
 
 .photographs-card::before,
-.clothes-card::before {
+.clothes-card::before,
+.objects-card::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -136,14 +139,16 @@ body {
 }
 
 .photographs-card:hover::before,
-.clothes-card:hover::before {
+.clothes-card:hover::before,
+.objects-card:hover::before {
     width: 400px;
     height: 400px;
     animation: redGlow 2s ease-in-out infinite;
 }
 
 .photographs-card .card-content,
-.clothes-card .card-content {
+.clothes-card .card-content,
+.objects-card .card-content {
     position: relative;
     z-index: 1;
 }

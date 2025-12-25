@@ -17,3 +17,4 @@ git commit -m "$1"
 # The post-commit hook will automatically push
 echo "Done! Changes are being pushed to GitHub..."
 
+
