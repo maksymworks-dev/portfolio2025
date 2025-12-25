@@ -135,30 +135,30 @@ body {
     color: #000000;
 }
 
-.photographs-card::before,
-.clothes-card::before,
-.objects-card::before {
-    content: '';
+.red-blur-effect {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0) 70%);
-    transform: translate(-50%, -50%);
-    transition: all 0.6s ease;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
     filter: blur(20px);
     pointer-events: none;
     z-index: 0;
+    will-change: transform;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -webkit-transition: -webkit-transform 0.6s ease;
 }
 
-.photographs-card:hover::before,
-.clothes-card:hover::before,
-.objects-card:hover::before {
-    width: 200px;
-    height: 200px;
+.photographs-card:hover .red-blur-effect,
+.clothes-card:hover .red-blur-effect,
+.objects-card:hover .red-blur-effect {
+    transform: translate(-50%, -50%) scale(1);
     animation: redGlow 2s ease-in-out infinite;
+    -webkit-transform: translate(-50%, -50%) scale(1);
 }
 
 .photographs-card .card-content,
@@ -172,10 +172,12 @@ body {
     0%, 100% {
         opacity: 0.6;
         transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
     }
     50% {
         opacity: 0.8;
         transform: translate(-50%, -50%) scale(1.1);
+        -webkit-transform: translate(-50%, -50%) scale(1.1);
     }
 }
 
