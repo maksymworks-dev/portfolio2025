@@ -27,7 +27,8 @@
         <div class="container product-detail-container">
             <div class="product-detail-grid">
                 <div class="product-detail-image">
-                    <img src="" alt="Product" id="productImage">
+                    <img src="" alt="Product" id="productImage" class="main-image">
+                    <div id="additionalImages" class="additional-images"></div>
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
@@ -61,7 +62,8 @@
             image: urlParams.get('image') || '',
             price: urlParams.get('price') || '€ 000',
             materials: urlParams.get('materials') || 'MATERIAL DETAILS',
-            specs: urlParams.get('specs') ? urlParams.get('specs').split('|') : []
+            specs: urlParams.get('specs') ? urlParams.get('specs').split('|') : [],
+            additionalImages: urlParams.get('additionalImages') ? urlParams.get('additionalImages').split('|') : []
         };
 
         // Update page content
@@ -74,6 +76,22 @@
         if (productData.specs.length > 0) {
             const specsList = productData.specs.map(spec => '<li>' + spec + '</li>').join('');
             document.getElementById('productSpecs').innerHTML = '<ul>' + specsList + '</ul>';
+        }
+
+        // Add additional images for POLSKA product
+        if (productData.name === 'POLSKA, BLACK') {
+            const additionalImagesDiv = document.getElementById('additionalImages');
+            const images = [
+                'projects/polska-black-front.jpg',
+                'projects/polska-black-back.jpg'
+            ];
+            images.forEach(function(imgSrc) {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = productData.name;
+                img.className = 'additional-image';
+                additionalImagesDiv.appendChild(img);
+            });
         }
     </script>
 </body>
