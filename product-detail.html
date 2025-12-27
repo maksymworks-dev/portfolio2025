@@ -38,17 +38,6 @@
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
-                    <div class="product-detail-price" id="productPrice">€ 000</div>
-                    <div class="product-detail-materials" id="productMaterials">
-                        <p>MATERIAL DETAILS</p>
-                    </div>
-                    <div class="product-detail-specs" id="productSpecs">
-                        <ul>
-                            <li>Specification 1</li>
-                            <li>Specification 2</li>
-                            <li>Specification 3</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -76,13 +65,6 @@
         document.getElementById('productName').textContent = productData.name;
         document.getElementById('productImage').src = productData.image;
         document.getElementById('productImage').alt = productData.name;
-        document.getElementById('productPrice').textContent = productData.price;
-        document.getElementById('productMaterials').innerHTML = '<p>' + productData.materials + '</p>';
-        
-        if (productData.specs.length > 0) {
-            const specsList = productData.specs.map(spec => '<li>' + spec + '</li>').join('');
-            document.getElementById('productSpecs').innerHTML = '<ul>' + specsList + '</ul>';
-        }
 
         // Set up carousel for all products with multiple images
         const carouselContainer = document.querySelector('.carousel-images-wrapper');
