@@ -18,3 +18,5 @@ git commit -m "$1"
 echo "Done! Changes are being pushed to GitHub..."
 
 
+
+
