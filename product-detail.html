@@ -28,6 +28,7 @@
             <div class="product-detail-grid">
                 <div class="product-detail-image">
                     <img src="" alt="Product" id="productImage">
+                    <div class="additional-images" id="additionalImages"></div>
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
@@ -47,13 +48,29 @@
         const urlParams = new URLSearchParams(window.location.search);
         const productData = {
             name: urlParams.get('name') || 'PRODUCT NAME',
-            image: urlParams.get('image') || ''
+            image: urlParams.get('image') || '',
+            additionalImages: urlParams.get('additionalImages') || ''
         };
 
         // Update page content
         document.getElementById('productName').textContent = productData.name;
         document.getElementById('productImage').src = productData.image;
         document.getElementById('productImage').alt = productData.name;
+
+        // Add additional images if provided
+        if (productData.additionalImages) {
+            const additionalImagesContainer = document.getElementById('additionalImages');
+            const images = productData.additionalImages.split('|');
+            images.forEach(imagePath => {
+                if (imagePath.trim()) {
+                    const img = document.createElement('img');
+                    img.src = imagePath.trim();
+                    img.alt = productData.name;
+                    img.className = 'additional-image';
+                    additionalImagesContainer.appendChild(img);
+                }
+            });
+        }
     </script>
 </body>
 </html>
