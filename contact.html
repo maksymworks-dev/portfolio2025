@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects - BLESSIFICATOR</title>
-    <meta name="description" content="Objects collection">
+    <title>Contact - BLESSIFICATOR</title>
+    <meta name="description" content="Contact">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -24,21 +24,14 @@
         </div>
     </header>
 
-    <main class="main">
-        <div class="container">
-            <div class="project-grid">
-                <!-- Product 1: IMG_5678 -->
-                <a href="product-detail.html?name=СВАГА CUP X SKOE&image=projects/IMG_5678.JPG&price=&materials=&specs=&additionalImages=projects/IMG_5672.JPG" class="project-item-link">
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="projects/IMG_5678.JPG" alt="Object 1">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-name">СВАГА CUP X SKOE</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <main class="main info-main">
+        <div class="info-content">
+            <form class="contact-form" action="https://formsubmit.co/maksym.works@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <input type="hidden" name="_captcha" value="false">
+                <textarea name="message" class="contact-textarea" placeholder="Your message..." required></textarea>
+                <button type="submit" class="contact-submit">SUBMIT</button>
+            </form>
         </div>
     </main>
 
