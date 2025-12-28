@@ -138,7 +138,7 @@ body {
     text-transform: uppercase;
     color: #000000;
     background: transparent;
-    border: 1px solid #000000;
+    border: none;
     cursor: pointer;
     position: relative;
     overflow: visible;
