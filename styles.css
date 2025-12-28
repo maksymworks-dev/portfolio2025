@@ -140,12 +140,27 @@ body {
     background: transparent;
     border: 1px solid #000000;
     cursor: pointer;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    clip-path: none;
+    -webkit-clip-path: none;
 }
 
 .contact-submit:hover {
-    background: #000000;
-    color: #ffffff;
+    background-color: transparent;
+    color: #000000;
+}
+
+.contact-submit:hover .red-blur-effect {
+    transform: translate(-50%, -50%) scale(1);
+    animation: redGlow 2s ease-in-out infinite;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.submit-text {
+    position: relative;
+    z-index: 1;
 }
 
 /* Drawings Page - Full Width Images */
