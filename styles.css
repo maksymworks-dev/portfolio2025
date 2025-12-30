@@ -663,6 +663,47 @@ body {
     line-height: 1.4;
 }
 
+.buy-button {
+    padding: 12px 40px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #000000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    clip-path: none;
+    -webkit-clip-path: none;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.buy-button:hover {
+    background-color: transparent;
+    color: #000000;
+}
+
+.buy-button:hover .red-blur-effect {
+    transform: translate(-50%, -50%) scale(1);
+    animation: redGlow 2s ease-in-out infinite;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.buy-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.buy-button-text {
+    position: relative;
+    z-index: 1;
+}
+
 .product-detail-price {
     font-size: 18px;
     font-weight: 400;

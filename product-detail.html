@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <header class="header">
@@ -33,6 +34,10 @@
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
+                    <button class="buy-button" id="buyButton">
+                        <div class="red-blur-effect"></div>
+                        <span class="buy-button-text">BUY</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -50,7 +55,8 @@
         const productData = {
             name: urlParams.get('name') || 'PRODUCT NAME',
             image: urlParams.get('image') || '',
-            additionalImages: urlParams.get('additionalImages') || ''
+            additionalImages: urlParams.get('additionalImages') || '',
+            priceId: urlParams.get('priceId') || ''
         };
 
         // Update page content
@@ -69,6 +75,47 @@
                     img.alt = productData.name;
                     img.className = 'additional-image';
                     additionalImagesContainer.appendChild(img);
+                }
+            });
+        }
+
+        // Stripe checkout handler
+        const buyButton = document.getElementById('buyButton');
+        
+        // Hide buy button if no priceId is provided
+        if (!productData.priceId) {
+            buyButton.style.display = 'none';
+        } else {
+            buyButton.addEventListener('click', async () => {
+                buyButton.disabled = true;
+                buyButton.querySelector('.buy-button-text').textContent = 'LOADING...';
+
+                try {
+                    const response = await fetch('/api/create-checkout-session', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            productName: productData.name,
+                            productImage: productData.image,
+                            priceId: productData.priceId,
+                            quantity: 1
+                        }),
+                    });
+
+                    const data = await response.json();
+
+                    if (data.url) {
+                        window.location.href = data.url;
+                    } else {
+                        throw new Error('No checkout URL received');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                    buyButton.disabled = false;
+                    buyButton.querySelector('.buy-button-text').textContent = 'BUY';
                 }
             });
         }
