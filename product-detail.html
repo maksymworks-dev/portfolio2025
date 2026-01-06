@@ -52,17 +52,27 @@
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script>
         // Get product data from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const productData = {
-            name: urlParams.get('name') || 'PRODUCT NAME',
-            image: urlParams.get('image') || '',
-            additionalImages: urlParams.get('additionalImages') || '',
-            priceId: urlParams.get('priceId') || '',
-            description: urlParams.get('description') || '',
-            buyLink: urlParams.get('buyLink') || ''
-        };
+        let productData = {};
+        
+        // Check for ID parameter first
+        const productId = urlParams.get('id');
+        if (productId && products[productId]) {
+            productData = products[productId];
+        } else {
+            // Fallback to URL parameters
+            productData = {
+                name: urlParams.get('name') || 'PRODUCT NAME',
+                image: urlParams.get('image') || '',
+                additionalImages: urlParams.get('additionalImages') || '',
+                priceId: urlParams.get('priceId') || '',
+                description: urlParams.get('description') || '',
+                buyLink: urlParams.get('buyLink') || ''
+            };
+        }
 
         // Update page content
         document.getElementById('productName').textContent = productData.name;
