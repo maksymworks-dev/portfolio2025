@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://js.stripe.com/v3/"></script>
 </head>
+
 <body>
     <header class="header">
         <div class="header-content">
@@ -20,7 +22,8 @@
             <div class="header-right">
                 <a href="info.html" class="header-link">Info</a>
                 <a href="contact.html" class="header-link">Contact</a>
-                <a href="https://www.instagram.com/blessificator/" class="header-link" target="_blank" rel="noopener noreferrer">IG</a>
+                <a href="https://www.instagram.com/blessificator/" class="header-link" target="_blank"
+                    rel="noopener noreferrer">IG</a>
             </div>
         </div>
     </header>
@@ -56,13 +59,23 @@
             name: urlParams.get('name') || 'PRODUCT NAME',
             image: urlParams.get('image') || '',
             additionalImages: urlParams.get('additionalImages') || '',
-            priceId: urlParams.get('priceId') || ''
+            priceId: urlParams.get('priceId') || '',
+            description: urlParams.get('description') || '',
+            buyLink: urlParams.get('buyLink') || ''
         };
 
         // Update page content
         document.getElementById('productName').textContent = productData.name;
         document.getElementById('productImage').src = productData.image;
         document.getElementById('productImage').alt = productData.name;
+
+        // Add description if provided
+        if (productData.description) {
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.className = 'product-description';
+            descriptionDiv.innerHTML = productData.description; // Allow HTML for links
+            document.querySelector('.product-detail-info').insertBefore(descriptionDiv, document.getElementById('buyButton'));
+        }
 
         // Add additional images if provided
         if (productData.additionalImages) {
@@ -79,14 +92,21 @@
             });
         }
 
-        // Stripe checkout handler
+        // Buy button handler
         const buyButton = document.getElementById('buyButton');
-        
-        // Hide buy button if no priceId is provided
-        if (!productData.priceId) {
+
+        // Hide buy button if no priceId AND no buyLink
+        if (!productData.priceId && !productData.buyLink) {
             buyButton.style.display = 'none';
         } else {
             buyButton.addEventListener('click', async () => {
+                // External Link Flow
+                if (productData.buyLink) {
+                    window.location.href = productData.buyLink;
+                    return;
+                }
+
+                // Stripe Flow
                 buyButton.disabled = true;
                 buyButton.querySelector('.buy-button-text').textContent = 'LOADING...';
 
@@ -121,5 +141,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
