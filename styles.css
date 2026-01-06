@@ -664,7 +664,7 @@ body {
 }
 
 .buy-button {
-    padding: 12px 40px;
+    padding: 12px 40px 12px 0;
     font-family: inherit;
     font-size: 14px;
     font-weight: 300;
