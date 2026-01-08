@@ -41,5 +41,11 @@ const products = {
         image: "projects/IMG_5678.JPG",
         additionalImages: "projects/IMG_5672.JPG",
         priceId: ""
+    },
+    "dr-seksu-t-shirt": {
+        name: "DR. SEKSU T-shirt",
+        image: "projects/IMG_6499.JPG",
+        additionalImages: "projects/IMG_6495.JPG|projects/IMG_6496.JPG|projects/IMG_6501.JPG",
+        priceId: ""
     }
 };
