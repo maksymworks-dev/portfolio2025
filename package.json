@@ -4,7 +4,8 @@
   "description": "A minimal portfolio website for fashion designs and photography",
   "scripts": {
     "dev": "python3 -m http.server 8000",
-    "start": "python3 -m http.server 8000"
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'No build step required'"
   },
   "dependencies": {
     "stripe": "^14.21.0"
