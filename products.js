@@ -47,5 +47,18 @@ const products = {
         image: "projects/IMG_6499.JPG",
         additionalImages: "projects/IMG_6495.JPG|projects/IMG_6496.JPG|projects/IMG_6501.JPG",
         priceId: ""
-    }
+    },
+    "superbullo-femmes-fatales": {
+        name: "SUPERBULLO. FEMMES FATALES T-SHIRT",
+        image: "projects/IMG_6668.JPG",
+        additionalImages: "projects/Screenshot 2026-01-14 at 20.47.03.png|projects/IMG_6667.JPG",
+        priceId: ""
+    },
+    // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
+    // "new-product-slug": {
+    //     name: "NEW PRODUCT NAME",
+    //     image: "projects/image.jpg",
+    //     priceId: "",
+    //     buyLink: "https://your-shop.myshopify.com/cart/VARIANT_ID:1"
+    // }
 };
