@@ -61,4 +61,10 @@ const products = {
     //     priceId: "",
     //     buyLink: "https://your-shop.myshopify.com/cart/VARIANT_ID:1"
     // }
+    "superbullo-t-shirt": {
+        name: "SUPERBULLO T-SHIRT",
+        image: "projects/IMG_6668.JPG",
+        additionalImages: "projects/bullo_back.png|projects/IMG_6667.JPG",
+        priceId: ""
+    },
 };
