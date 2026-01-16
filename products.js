@@ -51,7 +51,7 @@ const products = {
     "superbullo-femmes-fatales": {
         name: "SUPERBULLO. FEMMES FATALES T-SHIRT",
         image: "projects/IMG_6668.JPG",
-        additionalImages: "projects/bullo_back.png|projects/IMG_6667.JPG",
+        additionalImages: "projects/bullo_back.jpg|projects/IMG_6667.JPG",
         priceId: ""
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
