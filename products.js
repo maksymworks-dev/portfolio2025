@@ -25,7 +25,7 @@ const products = {
     "warsaw-guide": {
         name: "WARSAW GUIDE",
         image: "projects/IMG_3944.JPG",
-        additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg",
+        additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg|projects/IMG_9970.jpeg",
         priceId: ""
     },
     "star-cowboy": {
