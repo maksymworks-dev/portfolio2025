@@ -21,7 +21,8 @@ const products = {
     "ich-bin-aus-saporischschja": {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
-        priceId: ""
+        priceId: "",
+        buyLink: "https://blessificator-com.myshopify.com/cart/10379420893523:1"
     },
     "warsaw-guide": {
         name: "WARSAW GUIDE",
