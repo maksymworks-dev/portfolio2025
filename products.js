@@ -9,7 +9,8 @@ const products = {
         name: "POLSKA, BLACK",
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
-        priceId: ""
+        priceId: "",
+        buyLink: "" // PASTE YOUR SHOPIFY LINK HERE. Example: https://your-store.myshopify.com/cart/4382719385721:1
     },
     "wariat-black": {
         name: "WARIAT, BLACK",
