@@ -9,8 +9,7 @@ const products = {
         name: "POLSKA, BLACK",
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
-        priceId: "",
-        buyLink: "" // PASTE YOUR SHOPIFY LINK HERE. Example: https://your-store.myshopify.com/cart/4382719385721:1
+        priceId: ""
     },
     "wariat-black": {
         name: "WARIAT, BLACK",
@@ -21,8 +20,7 @@ const products = {
     "ich-bin-aus-saporischschja": {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
-        priceId: "",
-        buyLink: "https://blessificator-com.myshopify.com/cart/10379420893523:1"
+        priceId: ""
     },
     "warsaw-guide": {
         name: "WARSAW GUIDE",
