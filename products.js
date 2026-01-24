@@ -28,10 +28,10 @@ const products = {
         image: "projects/IMG_4650.JPG",
         priceId: "",
         variants: {
-            "S": "", // PASTE SHOPIFY VARIANT ID FOR SMALL
-            "M": "", // PASTE SHOPIFY VARIANT ID FOR MEDIUM
-            "L": "", // PASTE SHOPIFY VARIANT ID FOR LARGE
-            "XL": "" // PASTE SHOPIFY VARIANT ID FOR XL
+            "S": "52817015734611", // PASTE SHOPIFY VARIANT ID FOR SMALL
+            "M": "52817015767379", // PASTE SHOPIFY VARIANT ID FOR MEDIUM
+            "L": "52817015800147", // PASTE SHOPIFY VARIANT ID FOR LARGE
+            "XL": "52817015832915" // PASTE SHOPIFY VARIANT ID FOR XL
         }
     },
     "warsaw-guide": {
