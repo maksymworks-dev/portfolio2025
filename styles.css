@@ -750,3 +750,31 @@ body {
 
 
 
+
+/* Size Selector */
+.size-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.size-option {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.2s;
+}
+
+.size-option:hover {
+    opacity: 0.6;
+}
+
+.size-option.selected {
+    border-color: #000000;
+    font-weight: 400;
+}

@@ -37,6 +37,7 @@
                 </div>
                 <div class="product-detail-info">
                     <h1 class="product-detail-name" id="productName">PRODUCT NAME</h1>
+                    <div class="size-selector" id="sizeSelector"></div>
                     <button class="buy-button" id="buyButton">
                         <div class="red-blur-effect"></div>
                         <span class="buy-button-text">BUY</span>
@@ -57,7 +58,7 @@
         // Get product data from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         let productData = {};
-        
+
         // Check for ID parameter first
         const productId = urlParams.get('id');
         if (productId && products[productId]) {
@@ -104,19 +105,60 @@
 
         // Buy button handler
         const buyButton = document.getElementById('buyButton');
+        const buyButtonText = buyButton.querySelector('.buy-button-text');
 
-        // Hide buy button if no priceId AND no buyLink
-        if (!productData.priceId && !productData.buyLink) {
+        // Size Selector Logic
+        if (productData.variants) {
+            const sizeSelector = document.getElementById('sizeSelector');
+            const sizes = Object.keys(productData.variants);
+            let selectedSize = null;
+
+            // Initialize Buy Button for Size Selection
+            buyButtonText.textContent = "SELECT SIZE";
+            buyButton.disabled = true;
+
+            sizes.forEach(size => {
+                const sizeBtn = document.createElement('button');
+                sizeBtn.className = 'size-option';
+                sizeBtn.textContent = size;
+                sizeBtn.onclick = () => {
+                    // Reset all
+                    document.querySelectorAll('.size-option').forEach(btn => btn.classList.remove('selected'));
+
+                    // Select this one
+                    sizeBtn.classList.add('selected');
+                    selectedSize = size;
+
+                    // Update Buy Link
+                    const variantId = productData.variants[size];
+                    if (variantId) {
+                        buyButton.disabled = false;
+                        buyButtonText.textContent = "BUY";
+                        // Set the click handler directly for the selected variant
+                        buyButton.onclick = () => {
+                            window.location.href = `https://blessificator-com.myshopify.com/cart/${variantId}:1`;
+                        };
+                    } else {
+                        // Variant ID missing (placeholder)
+                        buyButton.disabled = true;
+                        buyButtonText.textContent = "UNAVAILABLE";
+                    }
+                };
+                sizeSelector.appendChild(sizeBtn);
+            });
+        }
+        // Legacy/Simple Product Logic (No separate sizes)
+        else if (productData.buyLink) {
+            buyButton.addEventListener('click', () => {
+                window.location.href = productData.buyLink;
+            });
+        }
+        else if (!productData.priceId) {
             buyButton.style.display = 'none';
-        } else {
+        }
+        else {
+            // Stripe Flow (Legacy)
             buyButton.addEventListener('click', async () => {
-                // External Link Flow
-                if (productData.buyLink) {
-                    window.location.href = productData.buyLink;
-                    return;
-                }
-
-                // Stripe Flow
                 buyButton.disabled = true;
                 buyButton.querySelector('.buy-button-text').textContent = 'LOADING...';
 

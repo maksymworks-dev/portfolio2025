@@ -9,7 +9,13 @@ const products = {
         name: "POLSKA, BLACK",
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
-        priceId: ""
+        priceId: "",
+        variants: {
+            "S": "", // PASTE VARIANT ID HERE
+            "M": "", // PASTE VARIANT ID HERE
+            "L": "", // PASTE VARIANT ID HERE
+            "XL": "" // PASTE VARIANT ID HERE
+        }
     },
     "wariat-black": {
         name: "WARIAT, BLACK",
@@ -20,7 +26,13 @@ const products = {
     "ich-bin-aus-saporischschja": {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
-        priceId: ""
+        priceId: "",
+        variants: {
+            "S": "", // PASTE SHOPIFY VARIANT ID FOR SMALL
+            "M": "", // PASTE SHOPIFY VARIANT ID FOR MEDIUM
+            "L": "", // PASTE SHOPIFY VARIANT ID FOR LARGE
+            "XL": "" // PASTE SHOPIFY VARIANT ID FOR XL
+        }
     },
     "warsaw-guide": {
         name: "WARSAW GUIDE",
