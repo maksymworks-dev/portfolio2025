@@ -107,45 +107,40 @@
         const buyButton = document.getElementById('buyButton');
         const buyButtonText = buyButton.querySelector('.buy-button-text');
 
-        // Size Selector Logic
+        // Size Selector Logic (New "Reveal" Flow)
         if (productData.variants) {
             const sizeSelector = document.getElementById('sizeSelector');
             const sizes = Object.keys(productData.variants);
-            let selectedSize = null;
 
-            // Initialize Buy Button for Size Selection
-            buyButtonText.textContent = "SELECT SIZE";
-            buyButton.disabled = true;
+            // Initial State: Size Selector Hidden, Buy Button Visible
+            sizeSelector.style.display = 'none';
+            buyButtonText.textContent = "BUY";
+            buyButton.disabled = false;
 
+            // Generate Size Buttons
             sizes.forEach(size => {
                 const sizeBtn = document.createElement('button');
                 sizeBtn.className = 'size-option';
                 sizeBtn.textContent = size;
+
                 sizeBtn.onclick = () => {
-                    // Reset all
-                    document.querySelectorAll('.size-option').forEach(btn => btn.classList.remove('selected'));
-
-                    // Select this one
-                    sizeBtn.classList.add('selected');
-                    selectedSize = size;
-
-                    // Update Buy Link
                     const variantId = productData.variants[size];
                     if (variantId) {
-                        buyButton.disabled = false;
-                        buyButtonText.textContent = "BUY";
-                        // Set the click handler directly for the selected variant
-                        buyButton.onclick = () => {
-                            window.location.href = `https://blessificator-com.myshopify.com/cart/${variantId}:1`;
-                        };
+                        // Immediate Redirect
+                        window.location.href = `https://blessificator-com.myshopify.com/cart/${variantId}:1`;
                     } else {
-                        // Variant ID missing (placeholder)
-                        buyButton.disabled = true;
-                        buyButtonText.textContent = "UNAVAILABLE";
+                        alert("Sorry, this size is currently unavailable.");
                     }
                 };
                 sizeSelector.appendChild(sizeBtn);
             });
+
+            // Buy Button Click -> Reveal Sizes
+            buyButton.onclick = () => {
+                buyButton.style.display = 'none'; // Hide Buy Button
+                sizeSelector.style.display = 'flex'; // Show Sizes
+                // Optional: Trigger specific animation or focus if needed
+            };
         }
         // Legacy/Simple Product Logic (No separate sizes)
         else if (productData.buyLink) {
