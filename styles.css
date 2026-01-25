@@ -801,3 +801,24 @@ body {
     background-color: #000000;
     color: #ffffff;
 }
+
+/* Product Description */
+.product-description {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #000000;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-description a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.product-description a:hover {
+    opacity: 0.6;
+}
