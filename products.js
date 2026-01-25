@@ -3,6 +3,7 @@ const products = {
         name: "ДЯКУЮ, ROYAL BLUE",
         image: "projects/dyakyu-royal-blue.jpg",
         additionalImages: "projects/IMG_0966.JPG|projects/IMG_0578.JPG|projects/IMG_5911.JPG|projects/IMG_6204.JPG|projects/IMG_6338.JPG|projects/IMG_0577.JPG|projects/IMG_6211.JPG",
+        description: "DISCONTINUED.<br>If you want to get a piece, contact me via <a href='https://www.instagram.com/blessificator/' target='_blank'>IG DM</a> or <a href='https://www.blessificator.com/contact'>Contact form</a>.",
         priceId: ""
     },
     "polska-black": {
