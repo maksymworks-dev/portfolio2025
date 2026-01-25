@@ -237,13 +237,13 @@ body {
         gap: 20px;
         justify-items: center;
     }
-    
+
     .drawings-card {
         grid-column: 1 / -1;
         justify-self: center;
         max-width: 300px;
     }
-    
+
     .objects-card {
         grid-column: 1 / -1;
         justify-self: center;
@@ -326,11 +326,14 @@ body {
 }
 
 @keyframes redGlow {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.6;
         transform: translate(-50%, -50%) scale(1);
         -webkit-transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
         opacity: 0.8;
         transform: translate(-50%, -50%) scale(1.1);
@@ -521,6 +524,7 @@ body {
         transform: scale(0.8);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -664,7 +668,7 @@ body {
 }
 
 .buy-button {
-    padding: 12px 40px 12px 0;
+    padding: 12px 40px;
     font-family: inherit;
     font-size: 14px;
     font-weight: 300;
@@ -753,15 +757,24 @@ body {
 
 /* Size Selector */
 .size-selector {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     gap: 15px;
-    margin-top: 20px; /* Align with where Button was */
+    margin-top: 20px;
+    /* Align with where Button was */
     animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .size-option {
@@ -770,7 +783,8 @@ body {
     font-weight: 300;
     color: #000000;
     background: transparent;
-    border: 1px solid #e0e0e0; /* Subtle border */
+    border: 1px solid #e0e0e0;
+    /* Subtle border */
     cursor: pointer;
     padding: 8px 16px;
     transition: all 0.2s;
