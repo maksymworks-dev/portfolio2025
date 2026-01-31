@@ -12,10 +12,11 @@ const products = {
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
         variants: {
-            "S": "", // PASTE VARIANT ID HERE
-            "M": "", // PASTE VARIANT ID HERE
-            "L": "", // PASTE VARIANT ID HERE
-            "XL": "" // PASTE VARIANT ID HERE
+            "XS": "10393115033939", // PASTE VARIANT ID HERE
+            "S": "52882756272467", // PASTE VARIANT ID HERE
+            "M": "52882756305235", // PASTE VARIANT ID HERE
+            "L": "52882756338003", // PASTE VARIANT ID HERE
+            "XL": "52882756370771" // PASTE VARIANT ID HERE
         }
     },
     "wariat-black": {
