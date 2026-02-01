@@ -12,7 +12,7 @@ const products = {
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
         variants: {
-            "XS": "10393115033939", // PASTE VARIANT ID HERE
+            "XS": "52882835865939", // PASTE VARIANT ID HERE
             "S": "52882756272467", // PASTE VARIANT ID HERE
             "M": "52882756305235", // PASTE VARIANT ID HERE
             "L": "52882756338003", // PASTE VARIANT ID HERE
