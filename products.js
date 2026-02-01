@@ -73,7 +73,7 @@ const products = {
     //     name: "NEW PRODUCT NAME",
     //     image: "projects/image.jpg",
     //     priceId: "",
-    //     buyLink: "https://your-shop.myshopify.com/cart/VARIANT_ID:1"
+    //     buyLink: "https://c8z1ak-kv.myshopify.com/cart/VARIANT_ID:1"
     // }
 
 };
