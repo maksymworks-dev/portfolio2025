@@ -23,7 +23,14 @@ const products = {
         name: "WARIAT, BLACK",
         image: "projects/IMG_6665.JPG",
         additionalImages: "projects/IMG_6620.JPG|projects/IMG_6619.JPG",
-        priceId: ""
+        priceId: "",
+        variants: {
+            "S": "52881227546963",
+            "M": "52881227579731",
+            "L": "52881227612499",
+            "XL": "52881227645267",
+            "2XL": "52881227678035"
+        }
     },
     "ich-bin-aus-saporischschja": {
         name: "Ich bin aus Saporischschja",
@@ -73,7 +80,7 @@ const products = {
     //     name: "NEW PRODUCT NAME",
     //     image: "projects/image.jpg",
     //     priceId: "",
-    //     buyLink: "https://c8z1ak-kv.myshopify.com/cart/VARIANT_ID:1"
+    //     buyLink: "https://blessificator-com.myshopify.com/cart/VARIANT_ID:1"
     // }
 
 };

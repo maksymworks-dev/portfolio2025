@@ -19,7 +19,7 @@ Instead of a complex API integration, we use **Cart Permalinks**. This is a stan
 The format for a direct checkout link is:
 
 ```
-https://c8z1ak-kv.myshopify.com/cart/VARIANT_ID:1
+https://blessificator-com.myshopify.com/cart/VARIANT_ID:1
 ```
 
 *   Replace `YOUR-SHOP-NAME` with your actual Shopify store handle (e.g., `blessificator-store`).
@@ -38,7 +38,7 @@ Open `products.js` and add your product entry. Use the `buyLink` property for th
         name: "COOL SHIRT",
         image: "projects/shirt.jpg",
         priceId: "", // Leave empty
-        buyLink: "https://c8z1ak-kv.myshopify.com/cart/123456789:1" // <--- YOUR LINK HERE
+        buyLink: "https://blessificator-com.myshopify.com/cart/123456789:1" // <--- YOUR LINK HERE
     },
 ```
 
