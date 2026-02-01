@@ -1,3 +1,7 @@
+const config = {
+    showBuyButtons: false // Toggle this to true to show buy buttons again
+};
+
 const products = {
     "dyakyu-royal-blue": {
         name: "ДЯКУЮ, ROYAL BLUE",

@@ -107,8 +107,12 @@
         const buyButton = document.getElementById('buyButton');
         const buyButtonText = buyButton.querySelector('.buy-button-text');
 
+        // Check global visibility toggle (New)
+        if (typeof config !== 'undefined' && config.showBuyButtons === false) {
+            buyButton.style.display = 'none';
+        }
         // Size Selector Logic (New "Reveal" Flow)
-        if (productData.variants) {
+        else if (productData.variants) {
             const sizeSelector = document.getElementById('sizeSelector');
             const sizes = Object.keys(productData.variants);
 
