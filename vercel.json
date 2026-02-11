@@ -3,16 +3,7 @@
   "trailingSlash": false,
   "functions": {
     "api/webhook.js": {
-      "excludeFiles": [
-        "projects/**",
-        ".git/**",
-        "**/*.jpg",
-        "**/*.jpeg",
-        "**/*.png",
-        "**/*.gif",
-        "**/*.mp4",
-        "**/*.mov"
-      ]
+      "excludeFiles": "{projects/**,.git/**,**/*.jpg,**/*.jpeg,**/*.png,**/*.gif,**/*.mp4,**/*.mov}"
     }
   },
   "outputDirectory": "."
