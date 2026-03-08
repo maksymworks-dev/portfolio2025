@@ -483,6 +483,21 @@ body {
     opacity: 0.6;
 }
 
+.dm-link {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #000000;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-top: 4px;
+    transition: opacity 0.3s;
+}
+
+.dm-link:hover {
+    opacity: 0.6;
+}
+
 /* Placeholder */
 .placeholder {
     width: 100%;
