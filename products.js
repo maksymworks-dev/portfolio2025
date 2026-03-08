@@ -15,7 +15,7 @@ const products = {
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
-        price: 99,
+        price: 120,
         variants: {
             "XS": "52882835865939", // PASTE VARIANT ID HERE
             "S": "52882756272467", // PASTE VARIANT ID HERE
@@ -41,7 +41,7 @@ const products = {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
         priceId: "",
-        price: 99,
+        price: 120,
         variants: {
             "S": "52817015734611", // PASTE SHOPIFY VARIANT ID FOR SMALL
             "M": "52817015767379", // PASTE SHOPIFY VARIANT ID FOR MEDIUM
@@ -54,7 +54,7 @@ const products = {
         image: "projects/IMG_3944.JPG",
         additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg|projects/IMG_9970.jpeg",
         priceId: "",
-        price: 99
+        price: 120
     },
     "star-cowboy": {
         name: "STAR COWBOY UPCYCLED JACKET",
@@ -75,14 +75,14 @@ const products = {
         image: "projects/IMG_6499.JPG",
         additionalImages: "projects/IMG_6495.JPG|projects/IMG_6496.JPG|projects/IMG_6501.JPG",
         priceId: "",
-        price: 99
+        price: 120
     },
     "superbullo-femmes-fatales": {
         name: "SUPERBULLO. FEMMES FATALES T-SHIRT",
         image: "projects/IMG_6668.JPG",
         additionalImages: "projects/bullo_back.jpg|projects/IMG_6667.JPG",
         priceId: "",
-        price: 99
+        price: 120
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {

@@ -472,8 +472,8 @@ body {
     font-weight: 300;
     letter-spacing: 0.3px;
     text-transform: uppercase;
-    color: #000000;
-    text-decoration: underline;
+    color: #4285F4;
+    text-decoration: none;
     margin-top: 8px;
     cursor: pointer;
     transition: opacity 0.3s;
@@ -487,8 +487,8 @@ body {
     font-size: 11px;
     font-weight: 300;
     letter-spacing: 0.3px;
-    color: #000000;
-    text-decoration: underline;
+    color: #4285F4;
+    text-decoration: none;
     text-transform: uppercase;
     margin-top: 4px;
     transition: opacity 0.3s;
