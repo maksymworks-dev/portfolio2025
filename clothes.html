@@ -52,8 +52,6 @@
                             </div>
                             <div class="project-info">
                                 <div class="project-name">POLSKA, BLACK</div>
-                                <div class="project-price" data-base-price="99" data-base-currency="PLN">99 PLN</div>
-                                <a href="https://www.instagram.com/blessificator/" class="dm-link" target="_blank" rel="noopener noreferrer">DM TO ORDER</a>
                             </div>
                         </div>
                     </a>
@@ -85,8 +83,6 @@
                             </div>
                             <div class="project-info">
                                 <div class="project-name">Ich bin aus Saporischschja</div>
-                                <div class="project-price" data-base-price="99" data-base-currency="PLN">99 PLN</div>
-                                <a href="https://www.instagram.com/blessificator/" class="dm-link" target="_blank" rel="noopener noreferrer">DM TO ORDER</a>
                             </div>
                         </div>
                     </a>
@@ -101,8 +97,6 @@
                             </div>
                             <div class="project-info">
                                 <div class="project-name">WARSAW GUIDE</div>
-                                <div class="project-price" data-base-price="99" data-base-currency="PLN">99 PLN</div>
-                                <a href="https://www.instagram.com/blessificator/" class="dm-link" target="_blank" rel="noopener noreferrer">DM TO ORDER</a>
                             </div>
                         </div>
                     </a>
@@ -131,8 +125,6 @@
                             </div>
                             <div class="project-info">
                                 <div class="project-name">DR. SEKSU T-shirt</div>
-                                <div class="project-price" data-base-price="99" data-base-currency="PLN">99 PLN</div>
-                                <a href="https://www.instagram.com/blessificator/" class="dm-link" target="_blank" rel="noopener noreferrer">DM TO ORDER</a>
                             </div>
                         </div>
                     </a>
@@ -147,8 +139,6 @@
                             </div>
                             <div class="project-info">
                                 <div class="project-name">SUPERBULLO. FEMMES FATALES T-SHIRT</div>
-                                <div class="project-price" data-base-price="99" data-base-currency="PLN">99 PLN</div>
-                                <a href="https://www.instagram.com/blessificator/" class="dm-link" target="_blank" rel="noopener noreferrer">DM TO ORDER</a>
                             </div>
                         </div>
                     </a>
@@ -163,72 +153,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const priceElements = document.querySelectorAll('.project-price');
-            if (priceElements.length === 0) return;
 
-            try {
-                // Fetch user's location
-                const geoResponse = await fetch('https://ipwho.is/');
-                const geoData = await geoResponse.json();
-                
-                if (!geoData.success) {
-                    throw new Error('Could not determine location');
-                }
-
-                const countryCode = geoData.country_code;
-                const isEu = geoData.is_eu;
-
-                // Map country to currency
-                const currencyMap = {
-                    'PL': 'PLN', 'US': 'USD', 'GB': 'GBP', 'CA': 'CAD', 'AU': 'AUD', 
-                    'CH': 'CHF', 'JP': 'JPY', 'CN': 'CNY', 'CZ': 'CZK', 'DK': 'DKK', 
-                    'NO': 'NOK', 'SE': 'SEK', 'HU': 'HUF', 'RO': 'RON', 'BG': 'BGN', 
-                    'TR': 'TRY', 'IL': 'ILS', 'AE': 'AED', 'UA': 'UAH'
-                };
-
-                let userCurrency = currencyMap[countryCode];
-                if (!userCurrency) {
-                    userCurrency = isEu ? 'EUR' : 'USD';
-                }
-
-                // If user currency is PLN, no conversion needed
-                if (userCurrency === 'PLN') {
-                    return; 
-                }
-
-                // Fetch exchange rates
-                const ratesResponse = await fetch('https://api.exchangerate-api.com/v4/latest/PLN');
-                const ratesData = await ratesResponse.json();
-
-                const rate = ratesData.rates[userCurrency];
-                if (!rate) {
-                    throw new Error('Currency rate not found');
-                }
-
-                // Convert and update prices
-                priceElements.forEach(el => {
-                    const basePrice = parseFloat(el.getAttribute('data-base-price'));
-                    if (!isNaN(basePrice)) {
-                        const convertedPrice = basePrice * rate;
-                        
-                        // Format the price
-                        const formatter = new Intl.NumberFormat(undefined, {
-                            style: 'currency',
-                            currency: userCurrency,
-                            maximumFractionDigits: 0
-                        });
-                        
-                        el.textContent = formatter.format(convertedPrice);
-                    }
-                });
-
-            } catch (error) {
-                console.error('Error fetching currency data:', error);
-            }
-        });
-    </script>
 </body>
 <!-- Deployed at 2026-01-14T21:00:00 -->
 
