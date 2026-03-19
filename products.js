@@ -29,6 +29,7 @@ const products = {
         image: "projects/IMG_6665.JPG",
         additionalImages: "projects/IMG_6620.JPG|projects/IMG_6619.JPG",
         priceId: "",
+        price: 300,
         variants: {
             "S": "52881227546963",
             "M": "52881227579731",
