@@ -16,6 +16,7 @@ const products = {
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
         price: 120,
+        igBuy: true,
         variants: {
             "XS": "52882835865939", // PASTE VARIANT ID HERE
             "S": "52882756272467", // PASTE VARIANT ID HERE
@@ -30,6 +31,7 @@ const products = {
         additionalImages: "projects/IMG_6620.JPG|projects/IMG_6619.JPG",
         priceId: "",
         price: 300,
+        igBuy: true,
         variants: {
             "S": "52881227546963",
             "M": "52881227579731",
@@ -43,6 +45,7 @@ const products = {
         image: "projects/IMG_4650.JPG",
         priceId: "",
         price: 120,
+        igBuy: true,
         variants: {
             "S": "52817015734611", // PASTE SHOPIFY VARIANT ID FOR SMALL
             "M": "52817015767379", // PASTE SHOPIFY VARIANT ID FOR MEDIUM
@@ -55,6 +58,7 @@ const products = {
         image: "projects/IMG_3944.JPG",
         additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg|projects/IMG_9970.jpeg",
         priceId: "",
+        igBuy: true,
         price: 120
     },
     "star-cowboy": {
@@ -83,6 +87,7 @@ const products = {
         image: "projects/IMG_6668.JPG",
         additionalImages: "projects/bullo_back.jpg|projects/IMG_6667.JPG",
         priceId: "",
+        igBuy: true,
         price: 120
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)

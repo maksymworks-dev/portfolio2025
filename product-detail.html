@@ -156,8 +156,40 @@
         const buyButton = document.getElementById('buyButton');
         const buyButtonText = buyButton.querySelector('.buy-button-text');
 
-        // Check global visibility toggle (New)
-        if (typeof config !== 'undefined' && config.showBuyButtons === false) {
+        // Check if item has igBuy property for custom Instagram DM link logic
+        if (productData.igBuy) {
+            buyButton.style.display = 'flex'; // Use flex to match original button alignment context if needed, or inline-block. CSS uses just margin.
+            buyButtonText.style.transition = 'opacity 0.3s ease';
+            buyButtonText.textContent = 'BUY';
+            
+            buyButton.onclick = (e) => {
+                if (buyButtonText.textContent === 'BUY') {
+                    // First click: transition behavior
+                    e.preventDefault();
+                    buyButtonText.style.opacity = '0';
+                    setTimeout(() => {
+                         // Wrap the text in an A tag so it functions like a hard hyperlink natively (can be right-clicked/long-pressed)
+                        const linkEl = document.createElement('a');
+                        linkEl.href = 'https://www.instagram.com/blessificator/';
+                        linkEl.target = '_blank';
+                        linkEl.rel = 'noopener noreferrer';
+                        linkEl.style.textDecoration = 'none';
+                        linkEl.style.color = 'inherit';
+                        linkEl.textContent = 'BUY via Instagram DM';
+                        
+                        // Replace the entire content of buyButtonText with the link
+                        buyButtonText.innerHTML = '';
+                        buyButtonText.appendChild(linkEl);
+                        buyButtonText.style.opacity = '1';
+
+                        // Change the onclick behavior so full button area works
+                        buyButton.onclick = () => window.open('https://www.instagram.com/blessificator/', '_blank', 'noopener,noreferrer');
+                    }, 300);
+                }
+            };
+        }
+        // Check global visibility toggle (Legacy toggle)
+        else if (typeof config !== 'undefined' && config.showBuyButtons === false) {
             buyButton.style.display = 'none';
         }
         // Size Selector Logic (New "Reveal" Flow)
