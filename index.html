@@ -58,7 +58,8 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>©2025, BLESSIFICATOR</p>
+            <p>©<span id="copyright-year">2025</span>, BLESSIFICATOR</p>
+            <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 </body>
