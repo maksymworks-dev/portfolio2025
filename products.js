@@ -93,10 +93,10 @@ const products = {
     "color-block-stripe-polo-shirt": {
         name: "Color Block Stripe Polo Shirt",
         image: "projects/Color Block Stripe Polo Shirt-mockups-3.png",
-        additionalImages: "projects/Color Block Stripe Polo Shirt-mockups-3.png|projects/Color Block Stripe Polo Shirt-mockups-4.png|projects/Color Block Stripe Polo Shirt-mockups-1.png|projects/Color Block Stripe Polo Shirt-mockups-2.png",
+        additionalImages: "projects/Color Block Stripe Polo Shirt-mockups-4.png|projects/Color Block Stripe Polo Shirt-mockups-1.png|projects/Color Block Stripe Polo Shirt-mockups-2.png",
         priceId: "",
         igBuy: true,
-        price: 150
+        price: 200
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {
