@@ -91,7 +91,7 @@ const products = {
         price: 200
     },
     "color-block-stripe-polo-shirt": {
-        name: "Color Block Stripe Polo Shirt",
+        name: "BEWARE POLO SHIRT",
         image: "projects/Color Block Stripe Polo Shirt-mockups-3.png",
         additionalImages: "projects/Color Block Stripe Polo Shirt-mockups-4.png|projects/Color Block Stripe Polo Shirt-mockups-1.png|projects/Color Block Stripe Polo Shirt-mockups-2.png",
         priceId: "",
