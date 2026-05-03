@@ -98,6 +98,13 @@ const products = {
         igBuy: true,
         price: 200
     },
+    "a-girl-is-not-a-toy": {
+        name: "A GIRL IS NOT A TOY",
+        image: "projects/IMG_2087.PNG",
+        priceId: "",
+        igBuy: true,
+        price: 150
+    },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {
     //     name: "NEW PRODUCT NAME",
