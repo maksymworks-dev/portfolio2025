@@ -105,6 +105,14 @@ const products = {
         igBuy: true,
         price: 150
     },
+    "blessificator-hoodie": {
+        name: "BLESSIFICATOR HOODIE",
+        image: "projects/e0cb632c426b45fe8a7e10a2072a11bb.png",
+        additionalImages: "projects/b228562bc5124b238753ffcc51b0247e.png",
+        priceId: "",
+        igBuy: true,
+        price: 300
+    },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {
     //     name: "NEW PRODUCT NAME",
