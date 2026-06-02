@@ -5,7 +5,7 @@ const config = {
 const products = {
     "big-pharma-long-sleeved-t-shirt": {
         name: "BIG PHARMA LONG SLEEVED T-SHIRT",
-        image: "projects/bigpharma.png",
+        image: "projects/IMG_8714.JPG",
         additionalImages: "projects/IMG_8714.JPG|projects/IMG_8759.JPG|projects/IMG_8724.JPG",
         priceId: "",
         igBuy: true
