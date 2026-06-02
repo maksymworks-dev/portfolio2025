@@ -3,6 +3,13 @@ const config = {
 };
 
 const products = {
+    "big-pharma-long-sleeved-t-shirt": {
+        name: "BIG PHARMA LONG SLEEVED T-SHIRT",
+        image: "projects/bigpharma.png",
+        additionalImages: "projects/IMG_8714.JPG|projects/IMG_8759.JPG|projects/IMG_8724.JPG",
+        priceId: "",
+        igBuy: true
+    },
     "dyakyu-royal-blue": {
         name: "ДЯКУЮ, ROYAL BLUE",
         image: "projects/dyakyu-royal-blue.jpg",
