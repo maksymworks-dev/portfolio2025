@@ -105,6 +105,7 @@ const products = {
         igBuy: true,
         price: 150
     },
+    /*
     "color-block-stripe-polo-shirt": {
         name: "BEWARE POLO SHIRT",
         image: "projects/Color Block Stripe Polo Shirt-mockups-3.png",
@@ -113,6 +114,7 @@ const products = {
         igBuy: true,
         price: 200
     },
+    */
     "a-girl-is-not-a-toy": {
         name: "A GIRL IS NOT A TOY",
         image: "projects/IMG_2087.PNG",
