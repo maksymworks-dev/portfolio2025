@@ -3,6 +3,14 @@ const config = {
 };
 
 const products = {
+    "smoking-kills-t-shirt": {
+        name: "SMOKING KILLS T-SHIRT",
+        image: "projects/6E7109A7-30C6-4690-8326-DD4CB17DB2B1_1_201_a.jpeg",
+        additionalImages: "projects/421C5B00-19CA-4F91-A853-B0D1FB8443BE_1_102_o.jpeg|projects/0D5D6719-7733-455C-A00E-E9A839065EE4_1_102_o.jpeg|projects/DFD53EA5-0D20-46FE-8122-63029A72E1B1_1_102_o.jpeg|projects/FBABECE2-2E45-45B5-93D7-8BF88ECD2D44_1_102_o.jpeg",
+        priceId: "",
+        price: 150,
+        igBuy: true
+    },
     "big-pharma-long-sleeved-t-shirt": {
         name: "BIG PHARMA LONG SLEEVED T-SHIRT",
         image: "projects/IMG_8714.JPG",
