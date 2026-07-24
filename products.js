@@ -41,7 +41,7 @@ const products = {
         }
     },
     "wariat-black": {
-        name: "WARIAT, BLACK",
+        name: "\"WARIAT. ABSOLUTE BEAST\" hoodie",
         image: "projects/1B79B3D3-12B6-443B-8B49-2F188D6D97BF_1_105_c.jpeg",
         additionalImages: "projects/E03C6BD3-6840-4255-BDAF-EE7C0C7E6540_1_201_a.jpeg|projects/0E8FC135-4FE4-4EE1-B723-95C8245262D7_1_105_c.jpeg|projects/10D0EE22-EE0F-43E3-B49D-16F4416BBD31_1_105_c.jpeg",
         priceId: "",
