@@ -135,7 +135,8 @@ const products = {
         additionalImages: "projects/b228562bc5124b238753ffcc51b0247e.png|projects/e0cb632c426b45fe8a7e10a2072a11bb.png|projects/IMG_9310.JPG|projects/IMG_9158.JPG",
         priceId: "",
         igBuy: true,
-        price: 300
+        price: 200,
+        priceUSD: 55
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {
