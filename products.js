@@ -16,6 +16,7 @@ const products = {
         image: "projects/IMG_8714.JPG",
         additionalImages: "projects/IMG_8759.JPG|projects/IMG_8724.JPG|projects/bigpharma.png",
         priceId: "",
+        price: 200,
         igBuy: true
     },
     "dyakyu-royal-blue": {
