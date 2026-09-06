@@ -85,55 +85,12 @@
         document.getElementById('productImage').src = productData.image;
         document.getElementById('productImage').alt = productData.name;
 
-        // Add price with currency conversion if available
+        // Add price in EUR
         if (productData.price) {
             const priceDiv = document.getElementById('productPrice');
             priceDiv.setAttribute('data-base-price', productData.price);
             priceDiv.style.display = 'block';
-
-            // If a fixed USD price is set, show both currencies statically
-            if (productData.priceUSD) {
-                priceDiv.textContent = `${productData.price} PLN / ${productData.priceUSD} USD`;
-            } else {
-                priceDiv.textContent = `${productData.price} PLN`;
-
-                (async () => {
-                    try {
-                        const geoResponse = await fetch('https://ipwho.is/');
-                        const geoData = await geoResponse.json();
-                        if (!geoData.success) throw new Error('Could not determine location');
-
-                        const countryCode = geoData.country_code;
-                        const isEu = geoData.is_eu;
-
-                        const currencyMap = {
-                            'PL': 'PLN', 'US': 'USD', 'GB': 'GBP', 'CA': 'CAD', 'AU': 'AUD',
-                            'CH': 'CHF', 'JP': 'JPY', 'CN': 'CNY', 'CZ': 'CZK', 'DK': 'DKK',
-                            'NO': 'NOK', 'SE': 'SEK', 'HU': 'HUF', 'RO': 'RON', 'BG': 'BGN',
-                            'TR': 'TRY', 'IL': 'ILS', 'AE': 'AED', 'UA': 'UAH'
-                        };
-
-                        let userCurrency = currencyMap[countryCode] || (isEu ? 'EUR' : 'USD');
-                        if (userCurrency === 'PLN') return;
-
-                        const ratesResponse = await fetch('https://api.exchangerate-api.com/v4/latest/PLN');
-                        const ratesData = await ratesResponse.json();
-                        const rate = ratesData.rates[userCurrency];
-                        if (!rate) throw new Error('Currency rate not found');
-
-                        const convertedPrice = productData.price * rate;
-                        const formatter = new Intl.NumberFormat(undefined, {
-                            style: 'currency',
-                            currency: userCurrency,
-                            maximumFractionDigits: 0
-                        });
-
-                        priceDiv.textContent = formatter.format(convertedPrice);
-                    } catch (error) {
-                        console.error('Error fetching currency data:', error);
-                    }
-                })();
-            }
+            priceDiv.textContent = `${productData.price} EUR`;
         }
 
         // Add description if provided

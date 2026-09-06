@@ -8,7 +8,7 @@ const products = {
         image: "projects/6E7109A7-30C6-4690-8326-DD4CB17DB2B1_1_201_a.jpeg",
         additionalImages: "projects/421C5B00-19CA-4F91-A853-B0D1FB8443BE_1_102_o.jpeg|projects/0D5D6719-7733-455C-A00E-E9A839065EE4_1_102_o.jpeg|projects/DFD53EA5-0D20-46FE-8122-63029A72E1B1_1_102_o.jpeg|projects/FBABECE2-2E45-45B5-93D7-8BF88ECD2D44_1_102_o.jpeg",
         priceId: "",
-        price: 200,
+        price: 50,
         igBuy: true
     },
     "big-pharma-long-sleeved-t-shirt": {
@@ -16,7 +16,7 @@ const products = {
         image: "projects/IMG_8714.JPG",
         additionalImages: "projects/IMG_8759.JPG|projects/IMG_8724.JPG|projects/bigpharma.png",
         priceId: "",
-        price: 200,
+        price: 50,
         igBuy: true
     },
     "dyakyu-royal-blue": {
@@ -31,8 +31,7 @@ const products = {
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
-        price: 200,
-        priceUSD: 40,
+        price: 50,
         igBuy: true,
         variants: {
             "XS": "52882835865939", // PASTE VARIANT ID HERE
@@ -47,7 +46,7 @@ const products = {
         image: "projects/1B79B3D3-12B6-443B-8B49-2F188D6D97BF_1_105_c.jpeg",
         additionalImages: "projects/E03C6BD3-6840-4255-BDAF-EE7C0C7E6540_1_201_a.jpeg|projects/0E8FC135-4FE4-4EE1-B723-95C8245262D7_1_105_c.jpeg|projects/10D0EE22-EE0F-43E3-B49D-16F4416BBD31_1_105_c.jpeg|projects/IMG_9158.JPG",
         priceId: "",
-        price: 250,
+        price: 70,
         igBuy: true,
         variants: {
             "S": "52881227546963",
@@ -61,8 +60,7 @@ const products = {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
         priceId: "",
-        price: 200,
-        priceUSD: 40,
+        price: 50,
         igBuy: true,
         variants: {
             "S": "52817015734611", // PASTE SHOPIFY VARIANT ID FOR SMALL
@@ -77,8 +75,7 @@ const products = {
         additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg|projects/IMG_9970.jpeg",
         priceId: "",
         igBuy: true,
-        price: 200,
-        priceUSD: 40
+        price: 50
     },
     "star-cowboy": {
         name: "STAR COWBOY UPCYCLED JACKET",
@@ -99,8 +96,8 @@ const products = {
         image: "projects/IMG_6499.JPG",
         additionalImages: "projects/IMG_6495.JPG|projects/IMG_6496.JPG|projects/IMG_6501.JPG",
         priceId: "",
-        price: 200,
-        priceUSD: 40
+        igBuy: true,
+        price: 50
     },
     "superbullo-femmes-fatales": {
         name: "SUPERBULLO. FEMMES FATALES T-SHIRT",
@@ -108,8 +105,7 @@ const products = {
         additionalImages: "projects/bullo_back.jpg|projects/IMG_6667.JPG",
         priceId: "",
         igBuy: true,
-        price: 200,
-        priceUSD: 40
+        price: 50
     },
     /*
     "color-block-stripe-polo-shirt": {
@@ -126,8 +122,7 @@ const products = {
         image: "projects/IMG_2087.PNG",
         priceId: "",
         igBuy: true,
-        price: 200,
-        priceUSD: 40
+        price: 50
     },
     "blessificator-hoodie": {
         name: "BLESSIFICATOR HOODIE",
@@ -135,8 +130,7 @@ const products = {
         additionalImages: "projects/b228562bc5124b238753ffcc51b0247e.png|projects/e0cb632c426b45fe8a7e10a2072a11bb.png|projects/IMG_9310.JPG|projects/IMG_9158.JPG",
         priceId: "",
         igBuy: true,
-        price: 300,
-        priceUSD: 55
+        price: 70
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
     // "new-product-slug": {
