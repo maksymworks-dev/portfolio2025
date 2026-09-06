@@ -8,7 +8,7 @@ const products = {
         image: "projects/6E7109A7-30C6-4690-8326-DD4CB17DB2B1_1_201_a.jpeg",
         additionalImages: "projects/421C5B00-19CA-4F91-A853-B0D1FB8443BE_1_102_o.jpeg|projects/0D5D6719-7733-455C-A00E-E9A839065EE4_1_102_o.jpeg|projects/DFD53EA5-0D20-46FE-8122-63029A72E1B1_1_102_o.jpeg|projects/FBABECE2-2E45-45B5-93D7-8BF88ECD2D44_1_102_o.jpeg",
         priceId: "",
-        price: 150,
+        price: 200,
         igBuy: true
     },
     "big-pharma-long-sleeved-t-shirt": {
@@ -31,7 +31,7 @@ const products = {
         image: "projects/IMG_2258.jpeg",
         additionalImages: "projects/IMG_1486.JPG|projects/IMG_1462.JPG",
         priceId: "",
-        price: 150,
+        price: 200,
         priceUSD: 40,
         igBuy: true,
         variants: {
@@ -61,7 +61,7 @@ const products = {
         name: "Ich bin aus Saporischschja",
         image: "projects/IMG_4650.JPG",
         priceId: "",
-        price: 150,
+        price: 200,
         priceUSD: 40,
         igBuy: true,
         variants: {
@@ -77,7 +77,7 @@ const products = {
         additionalImages: "projects/3236496D-13D0-489D-9227-E0CAB0905511.jpg|projects/wg front.jpg|projects/IMG_9970.jpeg",
         priceId: "",
         igBuy: true,
-        price: 150,
+        price: 200,
         priceUSD: 40
     },
     "star-cowboy": {
@@ -99,7 +99,7 @@ const products = {
         image: "projects/IMG_6499.JPG",
         additionalImages: "projects/IMG_6495.JPG|projects/IMG_6496.JPG|projects/IMG_6501.JPG",
         priceId: "",
-        price: 150,
+        price: 200,
         priceUSD: 40
     },
     "superbullo-femmes-fatales": {
@@ -108,7 +108,7 @@ const products = {
         additionalImages: "projects/bullo_back.jpg|projects/IMG_6667.JPG",
         priceId: "",
         igBuy: true,
-        price: 150,
+        price: 200,
         priceUSD: 40
     },
     /*
@@ -126,7 +126,7 @@ const products = {
         image: "projects/IMG_2087.PNG",
         priceId: "",
         igBuy: true,
-        price: 150,
+        price: 200,
         priceUSD: 40
     },
     "blessificator-hoodie": {
@@ -135,7 +135,7 @@ const products = {
         additionalImages: "projects/b228562bc5124b238753ffcc51b0247e.png|projects/e0cb632c426b45fe8a7e10a2072a11bb.png|projects/IMG_9310.JPG|projects/IMG_9158.JPG",
         priceId: "",
         igBuy: true,
-        price: 200,
+        price: 300,
         priceUSD: 55
     },
     // TEMPLATE FOR SHOPIFY PRODUCT (See SHOPIFY_INTEGRATION.md)
