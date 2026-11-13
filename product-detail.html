@@ -97,7 +97,13 @@
         if (productData.description) {
             const descriptionDiv = document.createElement('div');
             descriptionDiv.className = 'product-description';
-            descriptionDiv.innerHTML = productData.description; // Allow HTML for links
+            // Only allow innerHTML when data comes from trusted products.js (productId found),
+            // not from untrusted URL parameters (fallback path).
+            if (productId && products[productId]) {
+                descriptionDiv.innerHTML = productData.description; // safe: source is products.js
+            } else {
+                descriptionDiv.textContent = productData.description; // safe: plain text only
+            }
             document.querySelector('.product-detail-info').insertBefore(descriptionDiv, document.getElementById('buyButton'));
         }
 

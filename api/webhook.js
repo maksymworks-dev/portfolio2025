@@ -1,5 +1,22 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+// Tell Vercel NOT to parse the body — Stripe needs the raw bytes to verify the signature
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+// Helper: collect raw body from the request stream
+function getRawBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on('data', (chunk) => chunks.push(chunk));
+    req.on('end', () => resolve(Buffer.concat(chunks)));
+    req.on('error', reject);
+  });
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -9,22 +26,10 @@ module.exports = async (req, res) => {
   let event;
 
   try {
-    // For Vercel, we need to get the raw body
-    // The body might be a string or buffer depending on how Vercel processes it
-    let body = req.body;
-    
-    // If body is an object (parsed JSON), convert it back to string
-    if (typeof body === 'object' && body !== null) {
-      body = JSON.stringify(body);
-    }
-    
-    // Ensure body is a string for webhook verification
-    if (typeof body !== 'string') {
-      body = String(body);
-    }
+    const rawBody = await getRawBody(req);
 
     event = stripe.webhooks.constructEvent(
-      body,
+      rawBody,
       sig,
       process.env.STRIPE_WEBHOOK_SECRET
     );
@@ -35,7 +40,7 @@ module.exports = async (req, res) => {
 
   // Handle the event
   switch (event.type) {
-    case 'checkout.session.completed':
+    case 'checkout.session.completed': {
       const session = event.data.object;
       console.log('Payment successful for session:', session.id);
       // Here you can add logic to:
@@ -44,10 +49,12 @@ module.exports = async (req, res) => {
       // - Create order record
       // - Notify admin
       break;
-    case 'payment_intent.succeeded':
+    }
+    case 'payment_intent.succeeded': {
       const paymentIntent = event.data.object;
       console.log('PaymentIntent succeeded:', paymentIntent.id);
       break;
+    }
     default:
       console.log(`Unhandled event type ${event.type}`);
   }

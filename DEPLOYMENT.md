@@ -21,6 +21,20 @@
    git push -u origin main
    ```
 
+## Environment Variables (required on Vercel)
+
+Go to your Vercel project → **Settings** → **Environment Variables** and add:
+
+| Name | Value |
+|---|---|
+| `STRIPE_SECRET_KEY` | Your Stripe secret key (`sk_live_...`) |
+| `STRIPE_WEBHOOK_SECRET` | Your Stripe webhook signing secret (`whsec_...`) |
+| `ALLOWED_ORIGIN` | Your production domain, e.g. `https://www.blessificator.com` |
+
+> ⚠️ Never put these values directly in code or commit them to Git.
+
+---
+
 ## Deploying to Vercel
 
 1. **Sign up/Login to Vercel**:
